@@ -8,8 +8,9 @@ backend:
 # Lets you try the editor locally with `npx decap-server` (no login needed).
 local_backend: true
 
-site_url: https://iihec.org
-display_url: https://iihec.org
+# Switch both to https://iihec.org when the domain is connected
+site_url: https://iihec.netlify.app
+display_url: https://iihec.netlify.app
 logo_url: /assets/img/logo.svg
 media_folder: src/assets/uploads
 public_folder: /assets/uploads
@@ -27,7 +28,7 @@ collections:
     fields:
       - { label: Title, name: title, widget: string }
       - { label: Summary (one sentence for the card), name: summary, widget: text }
-      - { label: Publish date, name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+      - { label: Publish date, name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD", picker_utc: true }
       - label: Type
         name: category
         widget: select
