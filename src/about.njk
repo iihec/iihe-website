@@ -2,7 +2,7 @@
 layout: layouts/base.njk
 permalink: /about/
 title: About us
-description: IIHE Cambodia gives students in Cambodia access to official British qualifications, face-to-face teaching and a supported pathway to a UK Bachelor’s degree.
+description: IIHE Cambodia was established by IT Academy STEP Institute to deliver British qualifications in business and computing in Cambodia, in partnership with NCC Education.
 ---
 {% from "partials/art.njk" import art, photo %}
 {% from "partials/macros.njk" import tbd %}
@@ -12,7 +12,8 @@ description: IIHE Cambodia gives students in Cambodia access to official British
     <div>
       <p class="eyebrow">About IIHE Cambodia</p>
       <h1 class="h1">Bringing UK degrees to students in Cambodia</h1>
-      <p class="lead">The International Institute of Higher Education (IIHE) Cambodia gives students in Cambodia access to official British qualifications, face-to-face teaching and a supported pathway to a UK Bachelor’s degree, without leaving Cambodia and at an affordable price.</p>
+      <p class="lead">The International Institute of Higher Education (IIHE) Cambodia was established by IT Academy STEP Institute to deliver British qualifications in business and computing in Cambodia, in partnership with NCC Education.</p>
+      <p class="lead">Applications for our first intake open in May 2027, and the first classes start in November 2027.</p>
       <div class="btn-row">
         <a class="btn btn-primary" href="/book-a-consultation/?meeting=campus">Book a campus visit</a>
         <a class="btn btn-secondary" href="/book-a-consultation/">Meet admissions</a>
@@ -25,17 +26,20 @@ description: IIHE Cambodia gives students in Cambodia access to official British
 <section class="section">
   <div class="container split">
     <div>
-      <p class="eyebrow">Why we exist</p>
+      <p class="eyebrow">Our mission</p>
       <h2 class="h2">International education should be closer, clearer and more achievable</h2>
     </div>
     <div>
-      <p class="body-lg">Many Cambodian students want an international degree but cannot relocate overseas for several years. IIHE Cambodia was created to give them a credible alternative: study locally, earn recognised qualifications and receive real academic guidance throughout the journey.</p>
-      <p class="pull">An international learning experience, full academic support and official British qualifications, at a fraction of the cost of studying overseas.</p>
+      <p class="body-lg">Many Cambodian students want an international degree but cannot relocate overseas for several years. IIHE Cambodia gives school leavers access to British qualifications while they stay in Cambodia. Students progress to a British Bachelor’s degree on our Phnom Penh campus, in small classes, with computer labs and an advisor who supports them from enrolment to graduation.</p>
+      <p class="pull">Our mission is to give Cambodian students with international ambitions a British education at an affordable price, and to prepare them for careers in Cambodia’s digital economy and abroad.</p>
     </div>
   </div>
 </section>
 
-<section class="section bg-soft">
+{% set founderBg = "bg-soft" %}
+{% include "partials/step-founder.njk" %}
+
+<section class="section">
   <div class="container">
     <div class="section-head">
       <p class="eyebrow">What IIHE Cambodia does</p>
@@ -46,8 +50,10 @@ description: IIHE Cambodia gives students in Cambodia access to official British
       <li>Give students access to NCC Education’s online learning materials</li>
       <li>Register students and coordinate academic administration with NCC Education</li>
       <li>Organise official assessments and examinations</li>
+      <li>Give every student an advisor, from enrolment to graduation</li>
       <li>Monitor progress and provide academic guidance</li>
       <li>Support students as they move into the final online UK degree stage</li>
+      <li>Teach in small classes, with computer labs on campus</li>
     </ul>
   </div>
 </section>
@@ -77,7 +83,7 @@ description: IIHE Cambodia gives students in Cambodia access to official British
       <h2 class="h2">A place to learn, ask questions and move forward</h2>
     </div>
     <div>
-      <p class="body-lg">Our Phnom Penh campus provides classrooms, computer labs, study areas and access to the resources you need. More importantly, it gives you people to turn to when you need guidance.</p>
+      <p class="body-lg">Our Phnom Penh campus provides classrooms, computer labs, study areas and access to the resources you need. Classes are small, and every student has an advisor who supports them from enrolment to graduation.</p>
       <dl class="contact-box" style="margin:28px 0;display:grid;grid-template-columns:130px 1fr;gap:10px 16px">
         <dt class="muted">Address</dt><dd style="margin:0;font-weight:600">{{ tbd(site.contact.address) }}</dd>
         <dt class="muted">Opening hours</dt><dd style="margin:0;font-weight:600">{{ tbd(site.contact.openingHours) }}</dd>
