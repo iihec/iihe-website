@@ -1,0 +1,18 @@
+---
+layout: layouts/base.njk
+---
+{% from "partials/art.njk" import art, photo %}
+<article class="article">
+  <div class="container">
+    <header class="article-head">
+      <a class="back-link" href="/news/">← News &amp; guides</a>
+      <p class="post-meta"><span>{{ category | capitalize }}</span><time datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time></p>
+      <h1 class="h1">{{ title }}</h1>
+      <p class="lead">{{ summary }}</p>
+    </header>
+    <div class="article-art">{% if image %}{{ photo(image, "", sizes="(min-width: 960px) 960px, 100vw") }}{% else %}{{ art(cover or "default") }}{% endif %}</div>
+    <div class="prose">
+      {{ content | safe }}
+    </div>
+  </div>
+</article>

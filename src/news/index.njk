@@ -1,0 +1,62 @@
+---
+layout: layouts/base.njk
+permalink: /news/
+title: News & guides
+description: Short, practical guides about programmes, careers, admissions and the international degree pathway at the International Institute of Higher Education (IIHE) Cambodia.
+---
+{% set guides = collections.posts | byCategory("guide") %}
+{% set news = collections.posts | byCategory("news") %}
+
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">News &amp; guides</p>
+    <h1 class="h1">Make a confident study decision</h1>
+    <p class="lead">Read short, practical guides about programmes, careers, admissions and the international degree pathway at IIHE Cambodia.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Featured guides</p>
+      <h2 class="h2">Start here</h2>
+    </div>
+    <div class="grid-3">
+      {% for post in guides %}{% include "partials/post-card.njk" %}{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section bg-soft">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Latest IIHE news</p>
+      <h2 class="h2">Intakes, events and updates</h2>
+    </div>
+    {% if news.length %}
+    <div class="grid-3">
+      {% for post in news %}{% include "partials/post-card.njk" %}{% endfor %}
+    </div>
+    {% else %}
+    <p class="empty-state">News about our first intake, campus events and partnership updates will appear here soon.</p>
+    {% endif %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">Follow IIHE Cambodia</p>
+      <h2 class="h2">New guides and dates, where you already are</h2>
+    </div>
+    <div>
+      <p class="body-lg">Follow us on Facebook and Telegram for new guides, programme updates, campus stories and application dates.</p>
+      <div class="social-row" style="margin-top:24px">
+        {% for s in [["facebook", "Facebook"], ["telegram", "Telegram"]] %}
+          {% if site.contact[s[0]] %}<a class="btn btn-secondary" href="{{ site.contact[s[0]] }}" target="_blank" rel="noopener">{{ s[1] }}</a>
+          {% else %}<span class="btn btn-secondary" style="opacity:.45;cursor:default" title="Link coming soon">{{ s[1] }}</span>{% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

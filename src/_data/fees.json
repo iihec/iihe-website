@@ -1,0 +1,26 @@
+{
+  "currency": "US$",
+  "rows": [
+    {
+      "stage": "One-time enrolment fee",
+      "amount": 100
+    },
+    {
+      "stage": "Year 1: Foundation (Level 3)",
+      "amount": 2500
+    },
+    {
+      "stage": "Year 2: Level 4 Diploma",
+      "amount": 2800
+    },
+    {
+      "stage": "Year 3: Level 5 Diploma",
+      "amount": 2800
+    },
+    {
+      "stage": "Year 4: Bachelor’s degree stage",
+      "amount": 4000
+    }
+  ],
+  "note": "Fees are paid one stage at a time. Ask admissions for the confirmed fee schedule, payment dates and full list of included costs before enrolment."
+}

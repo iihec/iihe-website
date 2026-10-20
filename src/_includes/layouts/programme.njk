@@ -1,0 +1,84 @@
+---
+layout: layouts/base.njk
+---
+{% from "partials/art.njk" import art, photo %}
+{% set p = programmes | findBy("key", programmeKey) %}
+
+<section class="page-hero">
+  <div class="container page-hero-grid">
+    <div>
+      <p class="eyebrow">{{ p.award }}</p>
+      <h1 class="h1">{{ heroTitle }}</h1>
+      <p class="lead">{{ heroLead }}</p>
+      <p class="lead">{{ heroNote }}</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="/book-a-consultation/?programme={{ p.name | urlencode }}">Book a free consultation</a>
+        <a class="btn btn-secondary" href="/fees-and-admissions/#fees">See fees</a>
+      </div>
+    </div>
+    {{ photo(p.photo, p.photoAlt, eager=true) }}
+  </div>
+</section>
+
+{% include "partials/ncc-partner.njk" %}
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">What you will learn</p>
+      <h2 class="h2">{{ learnTitle }}</h2>
+    </div>
+    <ul class="list-grid">
+      {% for item in learn %}<li>{{ item }}</li>{% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section bg-soft">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">How you will learn</p>
+      <h2 class="h2">{{ howTitle }}</h2>
+    </div>
+    <p class="body-lg">{{ howText }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">Your qualification path</p>
+      <h2 class="h2">Four stages to your {{ p.award }}</h2>
+      <p class="muted" style="margin-top:20px">Successful completion of each stage is required before progression. Final-stage entry is subject to the published university requirements.</p>
+    </div>
+    <ol class="qual-path">
+      {% for s in p.path %}
+      <li{% if loop.last %} class="is-final"{% endif %}><span class="qp-stage">{{ s.stage }}</span><span class="qp-qual">{{ s.qual }}</span></li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section bg-dark" id="careers">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">Career directions</p>
+      <h2 class="h2">{{ careersTitle }}</h2>
+    </div>
+    <div>
+      <p class="body-lg" style="color:#E4E5E6">{{ careersText }}</p>
+      <p class="fine-print">Career outcomes depend on your experience, performance and local employment requirements.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-soft" id="right-for-you">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Book a free consultation</p>
+      <h2 class="h2">{{ fitTitle }}</h2>
+      <p class="lead">{{ fitText }}</p>
+    </div>
+    {% include "partials/consultation.njk" %}
+  </div>
+</section>

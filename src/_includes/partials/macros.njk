@@ -1,0 +1,12 @@
+{# Shows a contact value, or a visible "to be added" placeholder while details are pending. #}
+{% macro contact(kind, label) %}
+{%- set v = site.contact[kind] -%}
+{%- if v -%}
+  {%- if kind == "phone" -%}<a href="tel:{{ v | replace(' ', '') }}">{{ v }}</a>
+  {%- elif kind == "email" -%}<a href="mailto:{{ v }}">{{ v }}</a>
+  {%- elif kind in ["telegram", "messenger", "facebook"] -%}<a href="{{ v }}" target="_blank" rel="noopener">{{ label or v }}</a>
+  {%- else -%}{{ v }}{%- endif -%}
+{%- else -%}<span class="tbd">To be added</span>{%- endif -%}
+{% endmacro %}
+
+{% macro tbd(value) %}{% if value %}{{ value }}{% else %}<span class="tbd">To be confirmed</span>{% endif %}{% endmacro %}

@@ -1,0 +1,58 @@
+[
+  {
+    "key": "business",
+    "name": "Business Management",
+    "award": "BSc (Hons) Business Management",
+    "url": "/programmes/business-management/",
+    "art": "business",
+    "summary": "Learn how organisations grow, compete and lead. Build practical knowledge in management, marketing, finance, people and business strategy.",
+    "path": [
+      {
+        "stage": "Year 1",
+        "qual": "NCC Education Level 3 Business qualification"
+      },
+      {
+        "stage": "Year 2",
+        "qual": "NCC Education Level 4 Diploma in Business"
+      },
+      {
+        "stage": "Year 3",
+        "qual": "NCC Education Level 5 Diploma in Business"
+      },
+      {
+        "stage": "Year 4",
+        "qual": "BSc (Hons) Business Management Top-Up, validated and awarded by the University of Greater Manchester and delivered online by Western International College Online (WINC)"
+      }
+    ],
+    "photo": "students-group-project",
+    "photoAlt": "Students working on a group project with laptops and a poster"
+  },
+  {
+    "key": "software",
+    "name": "Software Engineering",
+    "award": "BEng (Hons) Software Engineering",
+    "url": "/programmes/software-engineering/",
+    "art": "software",
+    "summary": "Learn to create the software and digital systems used by modern organisations. Develop skills in programming, web development, databases and software engineering. No previous coding experience is required.",
+    "path": [
+      {
+        "stage": "Year 1",
+        "qual": "NCC Education Level 3 Computing or Foundation qualification"
+      },
+      {
+        "stage": "Year 2",
+        "qual": "NCC Education Level 4 Diploma in Computing"
+      },
+      {
+        "stage": "Year 3",
+        "qual": "NCC Education Level 5 Diploma in Computing"
+      },
+      {
+        "stage": "Year 4",
+        "qual": "BEng (Hons) Software Engineering Top-Up, validated and awarded by the University of Greater Manchester and delivered online by Western International College Online (WINC)"
+      }
+    ],
+    "photo": "software-student-monitor",
+    "photoAlt": "Student working on code at a computer"
+  }
+]

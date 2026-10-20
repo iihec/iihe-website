@@ -1,0 +1,98 @@
+{#
+  Brand graphics used in place of photography until IIHE has its own campus photos.
+  Each variant is flat geometry in IIHE colours (brand book: "red lines, corner cuts and geometric blocks").
+  To switch to a photo later, replace art(...) with <img src="..." alt="..."> inside .art-well.
+#}
+{% macro art(variant="default", bars=true) %}
+<div class="art">
+  {% if bars %}<div class="art-bars" aria-hidden="true"><span></span><span></span></div>{% endif %}
+  <div class="art-well" aria-hidden="true">
+  {% if variant == "business" %}
+    <svg viewBox="0 0 480 270" preserveAspectRatio="xMidYMid slice">
+      <rect width="480" height="270" fill="#EAEAEB"/>
+      <rect x="110" y="170" width="44" height="60" fill="#404245"/>
+      <rect x="172" y="138" width="44" height="92" fill="#404245"/>
+      <rect x="234" y="104" width="44" height="126" fill="#404245"/>
+      <rect x="296" y="66" width="44" height="164" fill="#404245"/>
+      <path d="M358 230V30h44v160l-40 40Z" fill="#D72027"/>
+      <path d="M90 230h330" stroke="#202124" stroke-width="3"/>
+      <path d="M118 150 L190 118 L252 86 L318 48 L380 20" fill="none" stroke="#D72027" stroke-width="3" stroke-dasharray="2 8" stroke-linecap="round"/>
+    </svg>
+  {% elif variant == "software" %}
+    <svg viewBox="0 0 480 270" preserveAspectRatio="xMidYMid slice">
+      <rect width="480" height="270" fill="#EAEAEB"/>
+      <path d="M150 60 L90 135 L150 210" fill="none" stroke="#404245" stroke-width="30" stroke-linejoin="miter"/>
+      <path d="M330 60 L390 135 L330 210" fill="none" stroke="#404245" stroke-width="30" stroke-linejoin="miter"/>
+      <path d="M268 48 L212 222" stroke="#D72027" stroke-width="26"/>
+      <rect x="176" y="236" width="128" height="10" fill="#D72027"/>
+    </svg>
+  {% elif variant == "bac2" %}
+    <svg viewBox="0 0 480 270" preserveAspectRatio="xMidYMid slice">
+      <rect width="480" height="270" fill="#EAEAEB"/>
+      <rect x="80" y="120" width="120" height="34" fill="#404245"/>
+      <path d="M200 137 H260" stroke="#202124" stroke-width="3"/>
+      <path d="M260 137 L300 80 H400" fill="none" stroke="#202124" stroke-width="3"/>
+      <path d="M260 137 H400" fill="none" stroke="#D72027" stroke-width="5"/>
+      <path d="M260 137 L300 194 H400" fill="none" stroke="#202124" stroke-width="3"/>
+      <rect x="380" y="66" width="28" height="28" fill="#404245"/>
+      <path d="M380 123h28v28h-28z" fill="#D72027"/>
+      <rect x="380" y="180" width="28" height="28" fill="#404245"/>
+    </svg>
+  {% elif variant == "compare" %}
+    <svg viewBox="0 0 480 270" preserveAspectRatio="xMidYMid slice">
+      <rect width="480" height="270" fill="#EAEAEB"/>
+      <rect x="0" y="0" width="240" height="270" fill="#404245"/>
+      <rect x="70" y="150" width="26" height="50" fill="#EAEAEB"/>
+      <rect x="106" y="120" width="26" height="80" fill="#EAEAEB"/>
+      <rect x="142" y="86" width="26" height="114" fill="#D72027"/>
+      <path d="M318 90 L288 135 L318 180" fill="none" stroke="#404245" stroke-width="18"/>
+      <path d="M402 90 L432 135 L402 180" fill="none" stroke="#404245" stroke-width="18"/>
+      <path d="M372 82 L348 188" stroke="#D72027" stroke-width="16"/>
+    </svg>
+  {% elif variant == "pathway" %}
+    <svg viewBox="0 0 480 270" preserveAspectRatio="xMidYMid slice">
+      <rect width="480" height="270" fill="#EAEAEB"/>
+      <rect x="60" y="180" width="80" height="34" fill="#404245"/>
+      <rect x="150" y="140" width="80" height="34" fill="#404245"/>
+      <rect x="240" y="100" width="80" height="34" fill="#404245"/>
+      <path d="M330 60h90v34h-56l-34 0Z" fill="#D72027"/>
+      <path d="M420 94 L386 94 L420 60Z" fill="#EAEAEB"/>
+      <path d="M60 230h360" stroke="#202124" stroke-width="3"/>
+    </svg>
+  {% elif variant == "campus" %}
+    <svg viewBox="0 0 480 360" preserveAspectRatio="xMidYMid slice">
+      <rect width="480" height="360" fill="#EAEAEB"/>
+      <rect x="70" y="120" width="200" height="190" fill="#404245"/>
+      <rect x="290" y="70" width="120" height="240" fill="#202124"/>
+      <g fill="#EAEAEB" opacity=".9">
+        <rect x="95" y="145" width="40" height="26"/><rect x="150" y="145" width="40" height="26"/><rect x="205" y="145" width="40" height="26"/>
+        <rect x="95" y="190" width="40" height="26"/><rect x="150" y="190" width="40" height="26"/><rect x="205" y="190" width="40" height="26"/>
+        <rect x="310" y="95" width="80" height="14"/><rect x="310" y="125" width="80" height="14"/><rect x="310" y="155" width="80" height="14"/><rect x="310" y="185" width="80" height="14"/>
+      </g>
+      <rect x="148" y="250" width="44" height="60" fill="#D72027"/>
+      <path d="M410 310 H360 L410 260Z" fill="#D72027"/>
+      <path d="M40 310h400" stroke="#202124" stroke-width="3"/>
+    </svg>
+  {% else %}
+    <svg viewBox="0 0 480 270" preserveAspectRatio="xMidYMid slice">
+      <rect width="480" height="270" fill="#EAEAEB"/>
+      <rect x="120" y="70" width="34" height="130" fill="#D72027"/>
+      <rect x="170" y="70" width="34" height="130" fill="#D72027"/>
+      <rect x="240" y="70" width="120" height="30" fill="#404245"/>
+      <rect x="240" y="120" width="120" height="30" fill="#404245"/>
+      <path d="M240 170h120l-30 30h-90Z" fill="#404245"/>
+    </svg>
+  {% endif %}
+  </div>
+</div>
+{% endmacro %}
+
+{# Royalty-free photo (Unsplash licence) in the same frame as the brand graphics. Files live in /assets/img/photos as NAME-800.webp and NAME-1600.webp. #}
+{% macro photo(name, alt, bars=true, eager=false, sizes="(min-width: 960px) 50vw, 100vw") %}
+<div class="art">
+  {% if bars %}<div class="art-bars" aria-hidden="true"><span></span><span></span></div>{% endif %}
+  <div class="art-well is-photo">
+    <img src="/assets/img/photos/{{ name }}-800.webp" srcset="/assets/img/photos/{{ name }}-800.webp 800w, /assets/img/photos/{{ name }}-1600.webp 1600w" sizes="{{ sizes }}" alt="{{ alt }}" width="800" height="533"{% if eager %} fetchpriority="high"{% else %} loading="lazy"{% endif %} decoding="async">
+  </div>
+</div>
+{% endmacro %}

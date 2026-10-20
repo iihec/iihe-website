@@ -1,0 +1,10 @@
+{% from "partials/art.njk" import art, photo %}
+<a class="post-card" href="{{ post.url }}">
+  {% if post.data.image %}{{ photo(post.data.image, "", false, sizes="(min-width: 1100px) 33vw, (min-width: 768px) 50vw, 100vw") }}{% else %}{{ art(post.data.cover or "default", false) }}{% endif %}
+  <div class="post-body">
+    <p class="post-meta"><span>{{ post.data.category | capitalize }}</span><time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time></p>
+    <h3 class="post-title">{{ post.data.title }}</h3>
+    <p class="post-summary">{{ post.data.summary }}</p>
+    <span class="text-link">{% if post.data.category == "guide" %}Read guide{% else %}Read more{% endif %} →</span>
+  </div>
+</a>

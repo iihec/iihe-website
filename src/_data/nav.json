@@ -1,0 +1,13 @@
+{
+  "main": [
+    { "label": "Home", "url": "/" },
+    { "label": "How it works", "url": "/#pathway" },
+    { "label": "Programmes", "url": "/programmes/business-management/", "children": [
+      { "label": "Business Management", "url": "/programmes/business-management/", "note": "BSc (Hons)" },
+      { "label": "Software Engineering", "url": "/programmes/software-engineering/", "note": "BEng (Hons)" }
+    ] },
+    { "label": "Fees & Admissions", "url": "/fees-and-admissions/" },
+    { "label": "News", "url": "/news/" },
+    { "label": "About us", "url": "/about/" }
+  ]
+}

@@ -1,0 +1,84 @@
+{% from "partials/macros.njk" import contact %}
+<div class="consult-grid">
+  <div>
+    <p class="eyebrow">What you will leave knowing</p>
+    <ul class="know-list">
+      <li>Which programme fits your interests and goals</li>
+      <li>The stage you may be eligible to enter</li>
+      <li>The documents and English assessment you need</li>
+      <li>The complete pathway, fees and payment schedule</li>
+      <li>How campus learning and the final online degree stage work</li>
+      <li>The next intake and your application steps</li>
+    </ul>
+    <h3 class="h4">What to prepare</h3>
+    <p class="muted" style="margin:10px 0 28px">Bring or send your latest education documents if available. Parents are welcome to join the consultation.</p>
+    <div class="contact-box">
+      <p class="kicker">Prefer to message us?</p>
+      <dl>
+        <dt>Phone</dt><dd>{{ contact("phone") }}</dd>
+        <dt>Telegram</dt><dd>{{ contact("telegram", "Message on Telegram") }}</dd>
+        <dt>Messenger</dt><dd>{{ contact("messenger", "Message on Messenger") }}</dd>
+        <dt>Email</dt><dd>{{ contact("email") }}</dd>
+      </dl>
+    </div>
+  </div>
+
+  <form class="form" name="consultation" method="POST" action="/thank-you/" data-netlify="true" netlify-honeypot="company">
+    <input type="hidden" name="form-name" value="consultation">
+    <p class="hp"><label>Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label></p>
+    <div class="form-grid">
+      <div class="field">
+        <label for="f-name">Full name <span class="req" aria-hidden="true">*</span></label>
+        <input id="f-name" name="name" type="text" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="f-phone">Phone or Telegram <span class="req" aria-hidden="true">*</span></label>
+        <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+      </div>
+      <div class="field full">
+        <fieldset>
+          <legend>I am a</legend>
+          <div class="chips">
+            {% for o in ["Student", "Parent", "Other"] %}
+            <label class="chip"><input type="radio" name="role" value="{{ o }}"{% if loop.first %} checked{% endif %}><span>{{ o }}</span></label>
+            {% endfor %}
+          </div>
+        </fieldset>
+      </div>
+      <div class="field full">
+        <fieldset>
+          <legend>Programme of interest</legend>
+          <div class="chips">
+            {% for o in ["Business Management", "Software Engineering", "Not sure yet"] %}
+            <label class="chip"><input type="radio" name="programme" value="{{ o }}"{% if loop.last %} checked{% endif %}><span>{{ o }}</span></label>
+            {% endfor %}
+          </div>
+        </fieldset>
+      </div>
+      <div class="field">
+        <fieldset>
+          <legend>Meeting</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="meeting" value="IIHE Cambodia campus" checked><span>IIHE Cambodia campus</span></label>
+            <label class="chip"><input type="radio" name="meeting" value="Online"><span>Online</span></label>
+          </div>
+        </fieldset>
+      </div>
+      <div class="field">
+        <fieldset>
+          <legend>Preferred language</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="language" value="Khmer" checked><span>Khmer</span></label>
+            <label class="chip"><input type="radio" name="language" value="English"><span>English</span></label>
+          </div>
+        </fieldset>
+      </div>
+      <div class="field full">
+        <label for="f-q">Your question <span class="opt">(optional)</span></label>
+        <textarea id="f-q" name="question" rows="4"></textarea>
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Book my free consultation</button>
+    <p class="form-note">We use your information only to contact you about your consultation and study options.</p>
+  </form>
+</div>

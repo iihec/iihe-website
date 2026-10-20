@@ -1,0 +1,17 @@
+{% set stages = [
+  ["Year 1", "IIHE Cambodia campus", "NCC Education Level 3 (Foundation)"],
+  ["Year 2", "IIHE Cambodia campus", "NCC Education Level 4 Diploma"],
+  ["Year 3", "IIHE Cambodia campus", "NCC Education Level 5 Diploma"],
+  ["Year 4", "Online, with continued support at IIHE Cambodia", "UK Bachelor’s degree validated and awarded by the University of Greater Manchester"]
+] %}
+<ol class="pathway">
+  {% for s in stages %}
+  <li class="stage{% if loop.last %} is-final{% endif %}">
+    <span class="stage-num" aria-hidden="true">0{{ loop.index }}</span>
+    <h3>{{ s[0] }}</h3>
+    <hr>
+    <div><p class="stage-label">Where you study</p><p class="stage-value">{{ s[1] }}</p></div>
+    <div><p class="stage-label">Your qualification</p><p class="stage-value is-qual">{{ s[2] }}</p></div>
+  </li>
+  {% endfor %}
+</ol>

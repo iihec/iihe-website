@@ -1,0 +1,70 @@
+{% from "partials/macros.njk" import contact %}
+{% set c = site.contact %}
+{% if not hideCta %}
+<section class="cta-band">
+  <div class="container cta-inner">
+    <div class="cta-copy">
+      <h2 class="h2">{{ ctaTitle or "Not sure where to start?" }}</h2>
+      <p>{{ ctaText or "Our admissions team will review your education background, suggest free tests in English and digital literacy, and explain the programmes, fees and next intake. The consultation is free." }}</p>
+    </div>
+    <div class="btn-row">
+      <a class="btn btn-light" href="/book-a-consultation/">Book a free consultation</a>
+      <button class="btn btn-outline-light js-message" type="button">Message admissions</button>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/assets/img/logo-reversed.svg" alt="International Institute of Higher Education" width="240" height="40" loading="lazy">
+        <p class="footer-tagline">Study in Cambodia. Follow a British education pathway. Graduate with a UK Bachelor’s degree.</p>
+        <div class="socials">
+          {% set socials = [["facebook", "Facebook", "M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v9h4v-9h3l.5-4h-3.5V9c0-.6.4-1 1-1Z"], ["telegram", "Telegram", "M21.4 3.6 2.9 10.8c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.4l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8L22.8 5c.3-1.3-.5-1.9-1.4-1.4Z"]] %}
+          {% for s in socials %}
+            {% if c[s[0]] %}<a href="{{ c[s[0]] }}" target="_blank" rel="noopener" aria-label="{{ s[1] }}">{% else %}<span title="{{ s[1] }}: link coming soon">{% endif %}
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="{{ s[2] }}"/></svg>
+            {% if c[s[0]] %}</a>{% else %}</span>{% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      <div>
+        <h2 class="footer-heading">Programmes</h2>
+        <ul class="footer-links">
+          <li><a href="/programmes/business-management/">Business Management</a></li>
+          <li><a href="/programmes/software-engineering/">Software Engineering</a></li>
+          <li><a href="/#pathway">How it works</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="footer-heading">Admissions</h2>
+        <ul class="footer-links">
+          <li><a href="/fees-and-admissions/">Fees &amp; admissions</a></li>
+          <li><a href="/book-a-consultation/">Book a free consultation</a></li>
+          <li><button class="js-message" type="button">Message admissions</button></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="footer-heading">Institute</h2>
+        <ul class="footer-links">
+          <li><a href="/about/">About us</a></li>
+          <li><a href="/news/">News &amp; guides</a></li>
+          <li><a href="/book-a-consultation/?meeting=campus">Campus visit</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p>IIHE Cambodia is an NCC Education Accredited Partner Centre. NCC Education awards the approved Level&nbsp;3, Level&nbsp;4 and Level&nbsp;5 qualifications. The final top-up programme is validated and awarded by the University of Greater Manchester, and delivered online by Western International College Online (WINC). IIHE Cambodia is accredited by NCC Education, not by the university.</p>
+      <div class="footer-contacts">
+        <span>Address: {% if c.address %}{{ c.address }}{% else %}{{ c.city }}{% endif %}</span>
+        <span>Phone: {{ contact("phone") }}</span>
+        <span>Email: {{ contact("email") }}</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span class="js-year">2026</span> International Institute of Higher Education Cambodia</span>
+    </div>
+  </div>
+</footer>

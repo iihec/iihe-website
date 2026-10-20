@@ -1,0 +1,99 @@
+# Content editor (Decap CMS) for IIHE Cambodia.
+# The backend is connected when the site is deployed (see README.md, "Content editor").
+backend:
+  name: github
+  repo: iihec/iihe-website
+  branch: main
+
+# Lets you try the editor locally with `npx decap-server` (no login needed).
+local_backend: true
+
+site_url: https://iihec.org
+display_url: https://iihec.org
+logo_url: /assets/img/logo.svg
+media_folder: src/assets/uploads
+public_folder: /assets/uploads
+
+collections:
+  - name: news
+    label: News & guides
+    label_singular: Post
+    description: Guides for students and parents, intake announcements, campus events and partnership updates.
+    folder: src/news/posts
+    create: true
+    slug: "{{slug}}"
+    sortable_fields: [date, title]
+    summary: "{{title}} · {{category}} · {{year}}-{{month}}-{{day}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Summary (one sentence for the card), name: summary, widget: text }
+      - { label: Publish date, name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+      - label: Type
+        name: category
+        widget: select
+        default: news
+        options:
+          - { label: "News (intakes, events, updates)", value: news }
+          - { label: "Guide (appears on the home page)", value: guide }
+      - label: Card graphic
+        name: cover
+        widget: select
+        default: default
+        options:
+          - { label: IIHE mark, value: default }
+          - { label: Pathway steps, value: pathway }
+          - { label: Business, value: business }
+          - { label: Software, value: software }
+          - { label: Options / choices, value: bac2 }
+          - { label: Business vs Software, value: compare }
+          - { label: Campus, value: campus }
+      - { label: Photo (optional, replaces the card graphic), name: image, widget: select, required: false, options: [students-classroom-group, trainer-support, students-group-project, students-campus-laptop, students-library-study, software-student-monitor, student-laptop-green, student-laptop-window, admissions-smile] }
+      - { label: Article, name: body, widget: markdown }
+
+  - name: settings
+    label: Settings
+    editor: { preview: false }
+    files:
+      - name: fees
+        label: Fees
+        file: src/_data/fees.json
+        fields:
+          - { label: Currency, name: currency, widget: hidden, default: "US$" }
+          - label: Fee rows
+            name: rows
+            widget: list
+            summary: "{{fields.stage}}: US${{fields.amount}}"
+            fields:
+              - { label: Payment stage, name: stage, widget: string }
+              - { label: Amount (US$, numbers only), name: amount, widget: number, value_type: int }
+          - { label: Note under the fees, name: note, widget: text }
+
+      - name: site
+        label: Contacts & next intake
+        file: src/_data/site.json
+        fields:
+          - { label: Short name, name: name, widget: string }
+          - { label: Full name, name: fullName, widget: string }
+          - { label: Website address, name: url, widget: string }
+          - { label: Default page description (Google), name: description, widget: text }
+          - label: Contact details
+            name: contact
+            widget: object
+            hint: Leave a field empty and the site shows “To be added”.
+            fields:
+              - { label: Campus address, name: address, widget: string, required: false }
+              - { label: City, name: city, widget: string }
+              - { label: Opening hours, name: openingHours, widget: string, required: false }
+              - { label: Phone, name: phone, widget: string, required: false }
+              - { label: Email, name: email, widget: string, required: false }
+              - { label: "Telegram link (https://t.me/...)", name: telegram, widget: string, required: false }
+              - { label: "Messenger link (https://m.me/...)", name: messenger, widget: string, required: false }
+              - { label: Facebook page link, name: facebook, widget: string, required: false }
+          - label: Next intake
+            name: intake
+            widget: object
+            hint: The “Next intake” sections stay hidden until “Classes begin” is filled in.
+            fields:
+              - { label: Classes begin, name: nextIntake, widget: string, required: false }
+              - { label: Application deadline, name: deadline, widget: string, required: false }
+              - { label: Class schedule, name: schedule, widget: string, required: false }

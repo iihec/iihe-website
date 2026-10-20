@@ -1,0 +1,88 @@
+---
+layout: layouts/base.njk
+permalink: /about/
+title: About us
+description: IIHE Cambodia gives students in Cambodia access to official British qualifications, face-to-face teaching and a supported pathway to a UK Bachelor’s degree.
+---
+{% from "partials/art.njk" import art, photo %}
+{% from "partials/macros.njk" import tbd %}
+
+<section class="page-hero">
+  <div class="container page-hero-grid">
+    <div>
+      <p class="eyebrow">About IIHE Cambodia</p>
+      <h1 class="h1">Bringing UK degrees to students in Cambodia</h1>
+      <p class="lead">The International Institute of Higher Education (IIHE) Cambodia gives students in Cambodia access to official British qualifications, face-to-face teaching and a supported pathway to a UK Bachelor’s degree, without leaving Cambodia and at an affordable price.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="/book-a-consultation/?meeting=campus">Book a campus visit</a>
+        <a class="btn btn-secondary" href="/book-a-consultation/">Meet admissions</a>
+      </div>
+    </div>
+    {{ photo("students-campus-laptop", "Students smiling together around a laptop on campus", eager=true) }}
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">Why we exist</p>
+      <h2 class="h2">International education should be closer, clearer and more achievable</h2>
+    </div>
+    <div>
+      <p class="body-lg">Many Cambodian students want an international degree but cannot relocate overseas for several years. IIHE Cambodia was created to give them a credible alternative: study locally, earn recognised qualifications and receive real academic guidance throughout the journey.</p>
+      <p class="pull">An international learning experience, full academic support and official British qualifications, at a fraction of the cost of studying overseas.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-soft">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">What IIHE Cambodia does</p>
+      <h2 class="h2">We take responsibility for your local study experience</h2>
+    </div>
+    <ul class="list-grid">
+      <li>Deliver face-to-face classes with qualified trainers</li>
+      <li>Give students access to NCC Education’s online learning materials</li>
+      <li>Register students and coordinate academic administration with NCC Education</li>
+      <li>Organise official assessments and examinations</li>
+      <li>Monitor progress and provide academic guidance</li>
+      <li>Support students as they move into the final online UK degree stage</li>
+    </ul>
+  </div>
+</section>
+
+{% include "partials/ncc-partner.njk" %}
+
+<section class="section bg-dark">
+  <div class="container">
+    <div class="split" style="margin-bottom:48px">
+      <div>
+        <p class="eyebrow">Our international pathway</p>
+        <h2 class="h2">British standards, connected from one stage to the next</h2>
+      </div>
+      <div>
+        <p class="body-lg" style="color:#E4E5E6">NCC Education is a UK awarding body and global provider of British education, established as a computing initiative by the British Government in 1966. It is recognised by Ofqual, the qualifications regulator in England, as an awarding body of British qualifications.</p>
+        <p class="body-lg" style="color:#E4E5E6">NCC Education develops and awards the Level 3, Level 4 and Level 5 qualifications. Through its university progression partnership, eligible students then move to the final top-up programme, validated and awarded by the University of Greater Manchester and delivered online by Western International College Online (WINC).</p>
+      </div>
+    </div>
+    {% include "partials/pathway.njk" %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">Our campus</p>
+      <h2 class="h2">A place to learn, ask questions and move forward</h2>
+    </div>
+    <div>
+      <p class="body-lg">Our Phnom Penh campus provides classrooms, computer labs, study areas and access to the resources you need. More importantly, it gives you people to turn to when you need guidance.</p>
+      <dl class="contact-box" style="margin:28px 0;display:grid;grid-template-columns:130px 1fr;gap:10px 16px">
+        <dt class="muted">Address</dt><dd style="margin:0;font-weight:600">{{ tbd(site.contact.address) }}</dd>
+        <dt class="muted">Opening hours</dt><dd style="margin:0;font-weight:600">{{ tbd(site.contact.openingHours) }}</dd>
+      </dl>
+      <a class="btn btn-primary" href="/book-a-consultation/?meeting=campus">Book a campus visit</a>
+    </div>
+  </div>
+</section>

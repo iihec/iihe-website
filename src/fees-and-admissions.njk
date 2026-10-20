@@ -1,0 +1,95 @@
+---
+layout: layouts/base.njk
+permalink: /fees-and-admissions/
+title: Fees & Admissions
+description: Clear fees for every stage of the IIHE Cambodia pathway, who can apply and how to start your application.
+---
+{% from "partials/macros.njk" import tbd %}
+
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Fees &amp; admissions</p>
+    <h1 class="h1">Know the full pathway and cost before you begin</h1>
+    <p class="lead">The International Institute of Higher Education (IIHE) Cambodia gives students and families a clear study plan from the first qualification to the final UK Bachelor’s degree stage.</p>
+    <p class="lead">Study in Cambodia, pay by stage and avoid the cost of moving and living overseas.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="/book-a-consultation/">Book a free consultation</a>
+      <button class="btn btn-secondary js-message" type="button">Message admissions</button>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="fees">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">Fees</p>
+      <h2 class="h2">Clear fees for every stage</h2>
+      <p class="body-lg" style="margin-top:20px">{{ fees.note }}</p>
+    </div>
+    <div>
+      <table class="fee-table">
+        <thead><tr><th scope="col">Payment stage</th><th scope="col">Current planned fee</th></tr></thead>
+        <tbody>
+          {% for row in fees.rows %}
+          <tr><td>{{ row.stage }}</td><td>{{ row.amount | usd }}</td></tr>
+          {% endfor %}
+        </tbody>
+        <tfoot><tr><td>Total pathway</td><td>{{ fees.rows | sumFees | usd }}</td></tr></tfoot>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-soft">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Who can apply</p>
+      <h2 class="h2">There is more than one way to begin</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card"><h3 class="h4" style="margin-bottom:0">Students with BAC II or an equivalent school qualification</h3></div>
+      <div class="card top-graphite"><h3 class="h4" style="margin-bottom:0">Students with A Levels, IB or another recognised qualification</h3></div>
+      <div class="card top-bluegrey"><h3 class="h4" style="margin-bottom:0">Adult learners with relevant qualifications or experience, subject to academic review</h3></div>
+    </div>
+    <p class="body-lg" style="margin-top:32px;max-width:760px">We review your education documents and English level before enrolment so you start at the stage that fits your background.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">How to apply</p>
+      <h2 class="h2">Four simple steps</h2>
+    </div>
+    <ol class="steps">
+      <li>Book a free consultation at the campus or online.</li>
+      <li>Bring or send your latest education documents.</li>
+      <li>Complete the required English and entry assessment.</li>
+      <li>Receive your recommended study plan, confirmed fee schedule and enrolment instructions.</li>
+    </ol>
+  </div>
+</section>
+
+{# Hidden until a date is entered in Settings → Contacts & next intake. #}
+{% if site.intake.nextIntake %}
+<section class="section bg-soft">
+  <div class="container split">
+    <div>
+      <p class="eyebrow is-red">Next intake</p>
+      <h2 class="h2">Start your application</h2>
+      <p class="body-lg" style="margin-top:20px">Book a consultation to confirm your starting stage and reserve your place.</p>
+    </div>
+    <div class="intake-card">
+      <dl>
+        <div><dt>Next intake</dt><dd>{{ tbd(site.intake.nextIntake) }}</dd></div>
+        <div><dt>Application deadline</dt><dd>{{ tbd(site.intake.deadline) }}</dd></div>
+        <div><dt>Class schedule</dt><dd>{{ tbd(site.intake.schedule) }}</dd></div>
+      </dl>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="/book-a-consultation/">Apply now</a>
+        <a class="btn btn-outline-light" href="/book-a-consultation/">Book a free consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}

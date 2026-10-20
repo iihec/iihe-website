@@ -1,0 +1,30 @@
+---
+layout: layouts/base.njk
+permalink: /book-a-consultation/
+title: Book a free consultation
+description: Meet the IIHE Cambodia admissions team on campus or online. Free, no obligation, in Khmer or English.
+hideCta: true
+---
+{% from "partials/art.njk" import photo %}
+<section class="page-hero">
+  <div class="container page-hero-grid">
+    <div>
+    <p class="eyebrow">Book a free consultation</p>
+    <h1 class="h1">Know your best starting point before you apply</h1>
+    <p class="lead">Meet the admissions team of the International Institute of Higher Education (IIHE) Cambodia on our Phnom Penh campus or online. We will give you clear answers about your programme, entry level, fees and next intake.</p>
+    <p class="lead">The consultation is free. You can ask questions and decide in your own time. There is no obligation to enrol.</p>
+    <ul class="checks">
+      <li>Free, no obligation</li>
+      <li>Campus or online</li>
+      <li>Khmer or English</li>
+    </ul>
+    </div>
+    {{ photo("admissions-smile", "A smiling young woman at a desk with a computer", eager=true) }}
+  </div>
+</section>
+
+<section class="section bg-soft" id="consultation">
+  <div class="container">
+    {% include "partials/consultation.njk" %}
+  </div>
+</section>

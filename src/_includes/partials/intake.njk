@@ -1,0 +1,15 @@
+{% from "partials/macros.njk" import tbd %}
+{# Hidden until a date is entered in Settings → Contacts & next intake. #}
+{% if site.intake.nextIntake %}
+<section class="intake-band" aria-label="Next intake">
+  <div class="container intake-inner">
+    <div class="intake-items">
+      <p class="eyebrow">Next intake</p>
+      <div class="intake-item"><span>Classes begin</span><strong>{{ tbd(site.intake.nextIntake) }}</strong></div>
+      <div class="intake-item"><span>Application deadline</span><strong>{{ tbd(site.intake.deadline) }}</strong></div>
+      <div class="intake-item"><span>Class schedule</span><strong>{{ tbd(site.intake.schedule) }}</strong></div>
+    </div>
+    <a class="text-link" href="/book-a-consultation/">Reserve your place →</a>
+  </div>
+</section>
+{% endif %}

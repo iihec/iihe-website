@@ -1,0 +1,57 @@
+{% from "partials/macros.njk" import contact %}
+<div class="utility-bar">
+  <div class="container utility-inner">
+    <div class="utility-contacts">
+      <span>Phone: {{ contact("phone") }}</span>
+      <span class="hide-sm">Telegram: {{ contact("telegram", "Message us") }}</span>
+      <span class="hide-sm">{{ site.contact.city }}</span>
+    </div>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <span class="lang is-current" aria-current="true">EN</span>
+      <span class="lang-sep" aria-hidden="true">|</span>
+      <span class="lang is-disabled" title="Khmer version coming soon">KH</span>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="{{ site.fullName }}, home">
+      <img src="/assets/img/logo.svg" alt="International Institute of Higher Education" width="240" height="40">
+    </a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bars" aria-hidden="true"></span>
+      <span class="visually-hidden">Menu</span>
+    </button>
+
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul class="nav-list">
+        {% for item in nav.main %}
+        {% if item.children %}
+        {% set active = page.url.startsWith("/programmes/") %}
+        <li class="nav-item has-children">
+          <button class="nav-link nav-parent{% if active %} is-active{% endif %}" aria-expanded="false">
+            {{ item.label }}
+            <svg width="9" height="6" viewBox="0 0 9 6" aria-hidden="true"><path d="M1 1l3.5 3.5L8 1" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          </button>
+          <ul class="subnav">
+            {% for child in item.children %}
+            <li><a href="{{ child.url }}"{% if page.url == child.url %} aria-current="page"{% endif %}><span class="subnav-note">{{ child.note }}</span>{{ child.label }}</a></li>
+            {% endfor %}
+          </ul>
+        </li>
+        {% else %}
+        {% set active = (page.url == item.url) or (item.url.length > 2 and not ("#" in item.url) and page.url.startsWith(item.url)) %}
+        <li class="nav-item">
+          <a class="nav-link{% if active %} is-active{% endif %}" href="{{ item.url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.label }}</a>
+        </li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+      <div class="nav-actions">
+        <a class="btn btn-primary btn-sm" href="/book-a-consultation/">Book a free consultation</a>
+      </div>
+    </nav>
+  </div>
+</header>
