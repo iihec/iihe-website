@@ -2,8 +2,8 @@
   "currency": "US$",
   "rows": [
     {
-      "stage": "One-time enrolment fee",
-      "amount": 100
+      "stage": "One-time admission fee",
+      "amount": 250
     },
     {
       "stage": "Year 1: Foundation (Level 3)",
@@ -15,7 +15,7 @@
     },
     {
       "stage": "Year 3: Level 5 Diploma",
-      "amount": 2800
+      "amount": 2900
     },
     {
       "stage": "Year 4: Bachelor’s degree stage",
