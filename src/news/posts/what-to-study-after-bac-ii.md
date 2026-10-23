@@ -40,7 +40,7 @@ Some students prefer to work or train in a practical skill before further study.
 - NCC Education awards the Level 3, 4 and 5 qualifications; the final Bachelor’s degree is validated and awarded by the University of Greater Manchester.
 - The pathway has four clear stages: Year 1 (Foundation), Year 2, Year 3 and Year 4 (the final degree year).
 - Fees are published for every stage and paid one stage at a time. See [Fees & Admissions](/fees-and-admissions/).
-- IELTS is not required to join. You take a free English placement test.
+- You do not need IELTS to start. An IELTS score of 4.5 or above (or equivalent) is accepted, or you can take the free NCC Education Standard English Placement Test at IIHE Cambodia.
 - Our trainers support you with lessons, assignments, exam preparation and study planning.
 
 ## Talk it through

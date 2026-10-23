@@ -45,7 +45,7 @@ IIHE Cambodia is accredited by NCC Education, not by the university.
 
 - You must successfully complete each stage before you move to the next.
 - Entry to the final stage is subject to the published university requirements.
-- IELTS is not required to join the NCC Education pathway. You take a free English placement test so we can confirm your starting level.
+- English: an IELTS score of 4.5 or above, or equivalent. If you do not have IELTS, you can take the free NCC Education Standard English Placement Test at IIHE Cambodia instead.
 - The standard route takes four academic years.
 
 ## Next step
