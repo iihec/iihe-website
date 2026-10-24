@@ -37,6 +37,7 @@ Some students prefer to work or train in a practical skill before further study.
 
 ## How IIHE Cambodia answers these questions
 
+- With BAC II you can enter the NCC Education Level 3 Diploma directly: you need an average of 45% or more (grade D) in 5 subjects, including 45% or more in Maths, and in English if studied.
 - NCC Education awards the Level 3, 4 and 5 qualifications; the final Bachelor’s degree is validated and awarded by the University of Greater Manchester.
 - The pathway has four clear stages: Year 1 (Foundation), Year 2, Year 3 and Year 4 (the final degree year).
 - Fees are published for every stage and paid one stage at a time. See [Fees & Admissions](/fees-and-admissions/).
