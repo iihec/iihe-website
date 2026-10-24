@@ -547,3 +547,9 @@ a.msg-option:hover { border-color: var(--charcoal); color: var(--charcoal); }
 .ncc-band-copy { flex: 1 1 320px; }
 .ncc-band-title { margin: 0 0 4px; font-weight: 700; font-size: 17px; color: var(--charcoal); }
 .ncc-band-copy p:last-child { font-size: 15px; color: var(--graphite); }
+
+/* ---------- University partner logo ---------- */
+.partner-logo { display: inline-flex; flex-direction: column; gap: 10px; margin-top: 24px; color: var(--bluegrey); }
+.partner-logo:hover { color: var(--bluegrey); opacity: .85; }
+.partner-logo-label { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.partner-logo img { width: 180px; height: auto; }

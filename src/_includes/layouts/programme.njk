@@ -51,11 +51,14 @@ layout: layouts/base.njk
       <h2 class="h2">Four stages to your {{ p.award }}</h2>
       <p class="muted" style="margin-top:20px">Successful completion of each stage is required before progression. Final-stage entry is subject to the published university requirements.</p>
     </div>
+    <div>
     <ol class="qual-path">
       {% for s in p.path %}
       <li{% if loop.last %} class="is-final"{% endif %}><span class="qp-stage">{{ s.stage }}</span><span class="qp-qual">{{ s.qual }}</span></li>
       {% endfor %}
     </ol>
+    {% set ugmLabel = "Year 4 degree validated and awarded by" %}{% include "partials/ugm-logo.njk" %}
+    </div>
   </div>
 </section>
 
