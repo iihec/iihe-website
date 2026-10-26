@@ -22,11 +22,11 @@ Here is how the four stages fit together.
 
 ### Year 1: Level 3 Diploma (Foundation)
 
-The Foundation year prepares you for university-level study in English. You build subject knowledge, academic writing and study skills. If you already hold a recognised qualification, you may be able to start at a later stage.
+The Foundation year prepares you for university study in English. You build subject knowledge, academic writing and study skills. If you already hold a recognised qualification, you may be able to start at a later stage.
 
 ### Year 2 and Year 3 (Level 4 and Level 5 Diplomas)
 
-These two years cover the core of your degree subject, Business or Computing. You attend face-to-face classes with IIHE trainers, use NCC Education’s online learning materials and complete official assessments and examinations. NCC Education awards each diploma.
+These two years cover the core of your degree subject, Business or Computing. You attend classes in person with IIHE trainers, use NCC Education’s online learning materials and complete official assessments and examinations. NCC Education awards each diploma.
 
 ### Year 4: the UK degree stage
 

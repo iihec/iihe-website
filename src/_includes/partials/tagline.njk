@@ -1,0 +1,13 @@
+{# Large tagline; each word lights up in reading order as the section scrolls into view. #}
+{% set lines = ["Study close to home.", "Learn to British standards.", "Graduate with a UK degree."] %}
+<section class="tagline" aria-label="Our promise">
+  <div class="container">
+    <p class="eyebrow">Our promise</p>
+    <p class="tagline-text">
+      {%- for line in lines -%}
+        {%- for word in line.split(" ") -%}<span class="w{% if line == lines[2] and (word == "UK" or word == "degree.") %} accent{% endif %}">{{ word }}</span> {% endfor -%}
+        {%- if not loop.last %}<br>{% endif -%}
+      {%- endfor -%}
+    </p>
+  </div>
+</section>

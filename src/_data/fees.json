@@ -2,7 +2,7 @@
   "currency": "US$",
   "rows": [
     {
-      "stage": "One-time admission fee",
+      "stage": "Admission fee (paid once)",
       "amount": 250
     },
     {

@@ -29,11 +29,13 @@
     <div class="form-grid">
       <div class="field">
         <label for="f-name">Full name <span class="req" aria-hidden="true">*</span></label>
-        <input id="f-name" name="name" type="text" autocomplete="name" required>
+        <input id="f-name" name="name" type="text" autocomplete="name" required data-validate data-required="Please enter your full name." aria-describedby="f-name-error">
+        <p class="field-error" id="f-name-error" hidden></p>
       </div>
       <div class="field">
         <label for="f-phone">Phone or Telegram <span class="req" aria-hidden="true">*</span></label>
-        <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+        <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required data-validate data-required="Please enter a phone number or Telegram username." data-invalid="Please check the number. It should have at least 8 digits, or start with @ for a Telegram username." aria-describedby="f-phone-error">
+        <p class="field-error" id="f-phone-error" hidden></p>
       </div>
       <div class="field full">
         <fieldset>

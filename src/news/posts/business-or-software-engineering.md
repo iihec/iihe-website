@@ -7,7 +7,7 @@ cover: compare
 image: student-laptop-window
 ---
 
-The International Institute of Higher Education (IIHE) Cambodia offers two pathways to a UK Bachelor’s degree: **BSc (Hons) Business Management** and **BEng (Hons) Software Engineering**. Both follow the same four-stage structure and the same fees. The difference is what you study and the kind of work it prepares you for.
+The International Institute of Higher Education (IIHE) Cambodia offers two pathways to a UK Bachelor’s degree: **BSc (Hons) Business Management** and **BEng (Hons) Software Engineering**. Both follow the same four stages and the same fees. The difference is what you study and the kind of work it prepares you for.
 
 ## At a glance
 
