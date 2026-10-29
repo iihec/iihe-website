@@ -22,6 +22,7 @@ NOTICE = (
 )
 FORM_DEMO = """<script>
 document.addEventListener('submit', function (e) {
+  if (e.defaultPrevented) return;
   e.preventDefault();
   location.href = '%sthank-you/index.html';
 });
