@@ -45,7 +45,7 @@ IIHE Cambodia is accredited by NCC Education, not by the university.
 
 - You must successfully complete each stage before you move to the next.
 - Entry to the final stage is subject to the published university requirements.
-- English: an IELTS score of 4.5 or above, or equivalent. If you do not have IELTS, you can take the free NCC Education Standard English Placement Test at IIHE Cambodia instead.
+- Entry to the Level 3 Diploma: 4 secondary school subjects at grade C or equivalent, including English and Maths, plus an IELTS score of 5.5 or above, or a pass (40% or more) in the free NCC Education Higher English Placement Test at IIHE Cambodia.
 - The standard route takes four academic years.
 
 ## Next step
