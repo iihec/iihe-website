@@ -17,7 +17,7 @@ The International Institute of Higher Education (IIHE) Cambodia offers two pathw
 | Core focus | How organisations grow, compete and lead | How software and digital systems are designed and built |
 | You will learn | Management, marketing, finance, people, operations, strategy | Programming, web development, databases, networks, testing |
 | How you learn | Classes, case work, assignments and assessments | Computer labs, practical projects and assessments |
-| Coding needed to start? | No | No, you can begin at Foundation level |
+| Coding needed to start? | No | No, you can begin in Year 1 |
 
 ## Business Management may suit you if…
 

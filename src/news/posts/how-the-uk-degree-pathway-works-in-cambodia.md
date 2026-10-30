@@ -15,14 +15,14 @@ Here is how the four stages fit together.
 
 | Stage | Where you study | Your qualification |
 |---|---|---|
-| Year 1 | IIHE Cambodia campus | NCC Education Level 3 Diploma (Foundation) |
+| Year 1 | IIHE Cambodia campus | NCC Education Level 3 Diploma in Business or Computing |
 | Year 2 | IIHE Cambodia campus | NCC Education Level 4 Diploma |
 | Year 3 | IIHE Cambodia campus | NCC Education Level 5 Diploma |
 | Year 4 | Online, with continued support at IIHE Cambodia | UK Bachelor’s degree validated and awarded by the University of Greater Manchester |
 
-### Year 1: Level 3 Diploma (Foundation)
+### Year 1: Level 3 Diploma
 
-The Foundation year prepares you for university study in English. You build subject knowledge, academic writing and study skills. If you already hold a recognised qualification, you may be able to start at a later stage.
+Year 1 prepares you for university study in English. You build subject knowledge, academic writing and study skills. If you already hold a recognised qualification, you may be able to start at a later stage.
 
 ### Year 2 and Year 3 (Level 4 and Level 5 Diplomas)
 

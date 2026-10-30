@@ -39,7 +39,7 @@ Some students prefer to work or train in a practical skill before further study.
 
 - With BAC II you can enter the NCC Education Level 3 Diploma in Business or in Computing directly. You need 4 secondary school subjects at grade C or equivalent, including English and Maths.
 - NCC Education awards the Level 3, 4 and 5 qualifications; the final Bachelor’s degree is validated and awarded by the University of Greater Manchester.
-- The pathway has four clear stages: Year 1 (Foundation), Year 2, Year 3 and Year 4 (the final degree year).
+- The pathway has four clear stages: Year 1 (Level 3 Diploma), Year 2, Year 3 and Year 4 (the final degree year).
 - Fees are published for every stage and paid one stage at a time. See [Fees & Admissions](/fees-and-admissions/).
 - You do not need IELTS to start. An IELTS score of 5.5 or above is accepted, or you can take the free NCC Education Higher English Placement Test at IIHE Cambodia (pass mark 40%).
 - Our trainers support you with lessons, assignments, exam preparation and study planning.
