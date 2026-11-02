@@ -80,7 +80,7 @@ collections:
           - label: Contact details
             name: contact
             widget: object
-            hint: Leave a field empty and the site shows “To be added”.
+            hint: Leave a field empty to hide it on the site.
             fields:
               - { label: Campus address, name: address, widget: string, required: false }
               - { label: City, name: city, widget: string }
@@ -90,6 +90,7 @@ collections:
               - { label: "Telegram link (https://t.me/...)", name: telegram, widget: string, required: false }
               - { label: "Messenger link (https://m.me/...)", name: messenger, widget: string, required: false }
               - { label: Facebook page link, name: facebook, widget: string, required: false }
+              - { label: "YouTube channel link", name: youtube, widget: string, required: false }
           - label: Next intake
             name: intake
             widget: object

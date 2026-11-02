@@ -15,10 +15,10 @@
     <div class="contact-box">
       <p class="kicker">Prefer to message us?</p>
       <dl>
-        <dt>Phone</dt><dd>{{ contact("phone") }}</dd>
-        <dt>Telegram</dt><dd>{{ contact("telegram", "Message on Telegram") }}</dd>
-        <dt>Messenger</dt><dd>{{ contact("messenger", "Message on Messenger") }}</dd>
-        <dt>Email</dt><dd>{{ contact("email") }}</dd>
+        {% if site.contact.phone %}<dt>Phone</dt><dd>{{ contact("phone") }}</dd>{% endif %}
+        {% if site.contact.telegram %}<dt>Telegram</dt><dd>{{ contact("telegram", "Message on Telegram") }}</dd>{% endif %}
+        {% if site.contact.messenger %}<dt>Messenger</dt><dd>{{ contact("messenger", "Message on Messenger") }}</dd>{% endif %}
+        {% if site.contact.email %}<dt>Email</dt><dd>{{ contact("email") }}</dd>{% endif %}
       </dl>
     </div>
   </div>

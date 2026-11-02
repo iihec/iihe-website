@@ -2,8 +2,9 @@
 <div class="utility-bar">
   <div class="container utility-inner">
     <div class="utility-contacts">
-      <span>Phone: {{ contact("phone") }}</span>
-      <span class="hide-sm">Telegram: {{ contact("telegram", "Message us") }}</span>
+      {% if site.contact.phone %}<span>Phone: {{ contact("phone") }}</span>{% endif %}
+      {% if site.contact.email %}<span>{{ contact("email") }}</span>{% endif %}
+      {% if site.contact.telegram %}<span class="hide-sm">Telegram: {{ contact("telegram", "Message us") }}</span>{% endif %}
       <span class="hide-sm">{{ site.contact.city }}</span>
     </div>
     <div class="lang-switch" role="group" aria-label="Language">
