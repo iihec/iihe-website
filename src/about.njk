@@ -85,7 +85,7 @@ description: IIHE Cambodia was established by IT Academy STEP Institute to deliv
       <p class="body-lg">Our Phnom Penh campus provides classrooms, computer labs, study areas and access to the resources you need. Classes are small, and every student has an advisor who supports them from enrolment to graduation.</p>
       <dl class="contact-box" style="margin:28px 0;display:grid;grid-template-columns:130px 1fr;gap:10px 16px">
         <dt class="muted">Address</dt><dd style="margin:0;font-weight:600">{{ tbd(site.contact.address) }}</dd>
-        <dt class="muted">Opening hours</dt><dd style="margin:0;font-weight:600">{{ tbd(site.contact.openingHours) }}</dd>
+        {% if site.contact.openingHours %}<dt class="muted">Opening hours</dt><dd style="margin:0;font-weight:600">{{ site.contact.openingHours }}</dd>{% endif %}
       </dl>
       <a class="btn btn-primary" href="/book-a-consultation/?meeting=campus">Book a campus visit</a>
     </div>
