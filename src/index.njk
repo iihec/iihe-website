@@ -179,6 +179,7 @@ hideCta: false
     </div>
     <div>
       <p class="body-lg">Fees are paid one stage at a time. You are never asked to commit to four years of tuition at once. See the full fee for each stage, who can apply and how to start your application.</p>
+      {% if fees.scholarship %}<p class="body-lg" style="margin-top:16px"><strong>{{ fees.scholarship }}</strong></p>{% endif %}
       <div class="btn-row" style="margin-top:28px">
         <a class="btn btn-primary" href="/fees-and-admissions/">See fees &amp; admissions</a>
         <a class="btn btn-secondary" href="#consultation">Get my fee schedule</a>

@@ -68,6 +68,7 @@ collections:
               - { label: Payment stage, name: stage, widget: string }
               - { label: Amount (US$, numbers only), name: amount, widget: number, value_type: int }
           - { label: Note under the fees, name: note, widget: text }
+          - { label: "Scholarships note (leave empty to hide)", name: scholarship, widget: text, required: false }
 
       - name: site
         label: Contacts & next intake

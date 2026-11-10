@@ -7,20 +7,21 @@
     },
     {
       "stage": "Year 1: Level 3 Diploma",
-      "amount": 2500
+      "amount": 3800
     },
     {
       "stage": "Year 2: Level 4 Diploma",
-      "amount": 2800
+      "amount": 4300
     },
     {
       "stage": "Year 3: Level 5 Diploma",
-      "amount": 2900
+      "amount": 4400
     },
     {
       "stage": "Year 4: Bachelor’s degree stage",
-      "amount": 4000
+      "amount": 5600
     }
   ],
-  "note": "Fees are paid one stage at a time. Ask admissions for the confirmed fee schedule, payment dates and full list of included costs before enrolment."
+  "note": "Fees are paid one stage at a time. Ask admissions for the confirmed fee schedule, payment dates and full list of included costs before enrolment.",
+  "scholarship": "Scholarships are available and will be announced in 2027."
 }

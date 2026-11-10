@@ -36,6 +36,12 @@ description: Clear fees for every stage of the IIHE Cambodia pathway, who can ap
         </tbody>
         <tfoot><tr><td>Total pathway</td><td>{{ fees.rows | sumFees | usd }}</td></tr></tfoot>
       </table>
+      {% if fees.scholarship %}
+      <div class="card" style="margin-top:24px">
+        <p class="kicker">Scholarships</p>
+        <p style="margin:0">{{ fees.scholarship }}</p>
+      </div>
+      {% endif %}
     </div>
   </div>
 </section>
