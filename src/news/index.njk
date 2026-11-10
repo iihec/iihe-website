@@ -50,11 +50,10 @@ description: Short, practical guides about programmes, careers, admissions and t
       <h2 class="h2">New guides and dates, where you already are</h2>
     </div>
     <div>
-      <p class="body-lg">Follow us on Facebook and Telegram for new guides, programme updates, campus stories and application dates.</p>
+      <p class="body-lg">Follow us on Facebook and YouTube for new guides, programme updates, campus stories and application dates.</p>
       <div class="social-row" style="margin-top:24px">
-        {% for s in [["facebook", "Facebook"], ["telegram", "Telegram"]] %}
-          {% if site.contact[s[0]] %}<a class="btn btn-secondary" href="{{ site.contact[s[0]] }}" target="_blank" rel="noopener">{{ s[1] }}</a>
-          {% else %}<span class="btn btn-secondary" style="opacity:.45;cursor:default" title="Link coming soon">{{ s[1] }}</span>{% endif %}
+        {% for s in [["facebook", "Facebook"], ["youtube", "YouTube"], ["telegram", "Telegram"]] %}
+          {% if site.contact[s[0]] %}<a class="btn btn-secondary" href="{{ site.contact[s[0]] }}" target="_blank" rel="noopener">{{ s[1] }}</a>{% endif %}
         {% endfor %}
       </div>
     </div>
