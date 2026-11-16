@@ -132,7 +132,8 @@ button { font: inherit; cursor: pointer; }
 
 .lang-switch { display: flex; align-items: center; gap: 8px; font-weight: 600; letter-spacing: 0.06em; }
 .lang.is-current { color: #fff; }
-.lang.is-disabled { color: #8A8D91; cursor: not-allowed; }
+a.lang { color: #A8ADB2; text-decoration: none; }
+a.lang:hover, a.lang:focus-visible { color: #fff; }
 .lang-sep { color: #5A5C60; }
 
 .site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 40; background: rgba(255, 255, 255, 0.86); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); border-bottom: 1px solid var(--grey); }
@@ -586,3 +587,17 @@ a.msg-option:hover { border-color: var(--charcoal); color: var(--charcoal); }
 .field-error { margin: 8px 0 0; font-size: 14px; font-weight: 600; color: var(--red-dark); }
 .field input[aria-invalid="true"] { border-color: var(--red); box-shadow: inset 0 0 0 1px var(--red); }
 .menu-open .mobile-actions, .menu-open .msg-fab { display: none; }
+
+/* Khmer pages (/km/): Kantumruy Pro, taller lines for Khmer script, no letter-spacing (it splits Khmer clusters) */
+html:lang(km) {
+  --font-display: "Kantumruy Pro", "Archivo", sans-serif;
+  --font-body: "Kantumruy Pro", "Archivo", sans-serif;
+}
+html:lang(km) body { line-height: 1.8; }
+html:lang(km) body * { letter-spacing: 0 !important; }
+html:lang(km) :is(.h1, .h2, .h3, .h4, .tagline-text, .post-title, .prose h2, .footer-tagline, .msg-title, .qp-qual, .pull) { line-height: 1.45; }
+html:lang(km) .h1 { font-size: clamp(30px, 5vw, 50px); }
+html:lang(km) .h2 { font-size: clamp(26px, 3.2vw, 32px); }
+html:lang(km) .tagline-text { font-size: clamp(26px, 3.8vw, 40px); }
+html:lang(km) :is(.eyebrow, .kicker, .stage-label, .qp-stage, .fee-table thead th, .intake-card dt, .post-meta, .back-link, .field label, .field legend, .footer-heading, .partner-logo-label, .subnav-note) { font-size: 14px; }
+html:lang(km) :is(p, li, dd, td, h1, h2, h3, h4) { overflow-wrap: anywhere; }

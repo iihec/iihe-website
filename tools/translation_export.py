@@ -154,6 +154,13 @@ def main(out):
         for el in els:
             c.walk(el, prefix)
 
+    # Shared texts that the home page does not show: the keyboard skip link and the default footer heading.
+    about = BeautifulSoup((SITE / "about/index.html").read_text(), "html.parser")
+    extra = about.select(".skip-link, .cta-band, .site-footer")
+    c.section("EVERY PAGE: texts not on the home page")
+    for el in extra:
+        c.walk(el, "shared-more")
+
     for slug, title, path in PAGES:
         soup = BeautifulSoup((SITE / path).read_text(), "html.parser")
         for el in soup.select(".utility-bar, .site-header, .msg-panel, .msg-fab, .mobile-actions, .site-footer"):

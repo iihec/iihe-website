@@ -8,9 +8,9 @@
       <span class="hide-sm">{{ site.contact.city }}</span>
     </div>
     <div class="lang-switch" role="group" aria-label="Language">
-      <span class="lang is-current" aria-current="true">EN</span>
+      <span class="lang lang-en is-current" aria-current="true">EN</span>
       <span class="lang-sep" aria-hidden="true">|</span>
-      <span class="lang is-disabled" title="Khmer version coming soon">KH</span>
+      <a class="lang lang-km" href="/km{{ '/' if page.url == '/404.html' else page.url }}" hreflang="km" lang="km">KH</a>
     </div>
   </div>
 </div>
