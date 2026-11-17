@@ -93,6 +93,14 @@ function fillLeaf($, el, km) {
   // A leaf whose text sits in one inline child (a link or bold text inside a paragraph): keep that child.
   const textKids = (el.children || []).filter((c) => (c.type === "text" && c.data.trim()) || (c.type === "tag" && !SKIP.has(c.name) && clean($(c).text())));
   if (textKids.length === 1 && textKids[0].type === "tag") return fillLeaf($, textKids[0], km);
+  // "Label: <a>link</a>" (e.g. "Telegram: Message us"): label before the colon, the rest stays in the link.
+  const m = km.match(/^(.*?[:៖])\s*(.+)$/);
+  if (m && textKids.length === 2 && textKids[0].type === "text" && /:\s*$/.test(textKids[0].data)
+      && textKids[1].type === "tag" && textKids[1].name === "a") {
+    textKids[0].data = textKids[0].data.replace(/\S[\s\S]*\S|\S/, m[1]);
+    $(textKids[1]).text(m[2]);
+    return;
+  }
   let placed = false;
   for (const c of [...(el.children || [])]) {
     if (c.type === "text") {
