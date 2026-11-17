@@ -101,6 +101,43 @@ function fillLeaf($, el, km) {
     $(textKids[1]).text(m[2]);
     return;
   }
+  // Two side-by-side parts (e.g. "Year 1 | NCC Education Level 3 Diploma"): split the Khmer at its colon.
+  if (m && textKids.length === 2 && textKids.every((c) => c.type === "tag" && c.name === "span")) {
+    $(textKids[0]).text(m[1].replace(/\s*[:៖]$/, ""));
+    $(textKids[1]).text(m[2]);
+    return;
+  }
+  // Text with links or bold words inside: find those words in the Khmer sentence (same name, or their
+  // own translation, or the opening question for a bold lead-in) and wrap only them again.
+  const inline = textKids.filter((c) => c.type === "tag" && INLINE.has(c.name));
+  if (inline.length && textKids.some((c) => c.type === "text")) {
+    const ranges = [];
+    let from = 0;
+    for (const c of inline) {
+      const t = clean($(c).text());
+      const cands = [t, dict.get(t), t.replace(/^The /, "")].filter(Boolean);
+      if (c === textKids[0] && c.name !== "a") { const q = km.match(/^[^?៖:]*[?៖:]/); if (q) cands.push(q[0]); }
+      let hit = null;
+      for (const s of cands) { const i = km.indexOf(s, from); if (i >= 0) { hit = [i, i + s.length]; break; } }
+      // "See <a>Page name</a>." worded differently in Khmer: link what follows "សូមមើល" (see).
+      const after = el.children.slice(el.children.indexOf(c) + 1).map((n) => (n.type === "text" ? n.data : $(n).text())).join("");
+      if (!hit && c.name === "a" && !/[^\s.!?]/.test(after)) {
+        const see = km.lastIndexOf("សូមមើល");
+        if (see >= from) { const s = see + "សូមមើល".length; hit = [s, km.replace(/[។.!?]+\s*$/, "").length]; }
+      }
+      if (!hit) { if (c.name === "a") lostLinks.add(`${t} -> ${c.attribs.href}`); continue; }
+      ranges.push([...hit, c]);
+      from = hit[1];
+    }
+    let html = "", at = 0;
+    for (const [s, e, c] of ranges) {
+      const attrs = Object.entries(c.attribs).map(([k, v]) => ` ${k}="${v.replace(/"/g, "&quot;")}"`).join("");
+      html += escapeHtml(km.slice(at, s)) + `<${c.name}${attrs}>${escapeHtml(km.slice(s, e))}</${c.name}>`;
+      at = e;
+    }
+    $el.html(html + escapeHtml(km.slice(at)));
+    return;
+  }
   let placed = false;
   for (const c of [...(el.children || [])]) {
     if (c.type === "text") {
@@ -118,6 +155,8 @@ function fillLeaf($, el, km) {
   if (!placed) $el.prepend(escapeHtml(km));
 }
 
+const INLINE = new Set(["a", "strong", "em", "span", "b", "i"]);
+const lostLinks = new Set();
 const escapeHtml = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
 function walk($, el, page) {
@@ -202,6 +241,7 @@ fs.rmSync(OUT, { recursive: true, force: true });
 const files = pages(SITE);
 files.forEach(translatePage);
 console.log(`[km] ${files.length} Khmer pages written to _site/km/, ${dict.size} translations loaded`);
+if (lostLinks.size) console.log(`[km] links whose words were not found in the Khmer text (shown without link):\n  - ${[...lostLinks].join("\n  - ")}`);
 if (missing.size) {
   console.log(`[km] ${missing.size} texts still in English:`);
   for (const [en, where] of missing) if (REPORT || missing.size <= 15) console.log(`  - "${en.slice(0, 80)}" (${[...where].slice(0, 3).join(", ")})`);
