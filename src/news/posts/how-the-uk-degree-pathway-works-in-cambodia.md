@@ -9,9 +9,9 @@ image: students-library-study
 
 Many families in Cambodia want a British degree but cannot spend three or four years paying for study and living costs overseas. The pathway at the International Institute of Higher Education (IIHE) Cambodia is built for them. You complete most of your studies on our Phnom Penh campus and finish with a UK Bachelor’s degree, without leaving Cambodia.
 
-Here is how the four stages fit together.
+Here is how each year fits together.
 
-## The four stages
+## Year by year
 
 | Stage | Where you study | Your qualification |
 |---|---|---|
@@ -30,7 +30,7 @@ These two years cover the core of your degree subject, Business or Computing. Yo
 
 ### Year 4: the UK degree stage
 
-After Level 5, you move to the final top-up year. It is validated and awarded by the University of Greater Manchester, and delivered online by Western International College Online (WINC). You can keep using the IIHE Cambodia campus and receive local support while you study.
+After you successfully complete Level 5, progression to the one-year Bachelor’s degree top-up is guaranteed. The top-up is validated and awarded by the University of Greater Manchester, and delivered online by Western International College Online (WINC). You can keep using the IIHE Cambodia campus and receive local support while you study.
 
 ## Who does what
 
