@@ -120,6 +120,21 @@
     paint();
   }
 
+  // Thank-you page: count one Google Analytics lead, only after a form was really sent from this site.
+  if (/\/thank-you\/$/.test(location.pathname)) {
+    try {
+      var lead = JSON.parse(sessionStorage.getItem("iihe_lead") || "null");
+      if (lead && typeof window.gtag === "function") {
+        sessionStorage.removeItem("iihe_lead");
+        window.gtag("event", "generate_lead", {
+          form_name: "consultation",
+          lead_source_page: lead.page, site_language: lead.lang,
+          programme: lead.programme, visitor_role: lead.role
+        });
+      }
+    } catch (err) {}
+  }
+
   // Consultation form: inline validation instead of browser pop-ups
   document.querySelectorAll("form.form").forEach(function (form) {
     form.setAttribute("novalidate", "");
@@ -135,7 +150,14 @@
         input.setAttribute("aria-invalid", msg ? "true" : "false");
         if (msg && ok) { ok = false; input.focus(); }
       });
-      if (!ok) e.preventDefault();
+      if (!ok) { e.preventDefault(); return; }
+      // Remember what was booked, so the thank-you page can count one lead (no names or phone numbers).
+      try {
+        var pick = function (n) { var el = form.querySelector('[name="' + n + '"]:checked') || form.querySelector('[name="' + n + '"]'); return el ? el.value : ""; };
+        sessionStorage.setItem("iihe_lead", JSON.stringify({
+          page: pick("booked_from_page"), lang: pick("site_language"), programme: pick("programme"), role: pick("role")
+        }));
+      } catch (err) {}
     });
   });
 })();
