@@ -25,6 +25,13 @@
   "telephone": {{ c.phone | dump | safe }},{% endif %}
   {%- if c.email %}
   "email": {{ c.email | dump | safe }},{% endif %}
+  {%- if c.openingHours %}
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "08:00",
+    "closes": "17:00"
+  }],{% endif %}
   "memberOf": {
     "@type": "Organization",
     "name": "NCC Education",

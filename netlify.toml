@@ -5,6 +5,13 @@
 [build.environment]
   NODE_VERSION = "24"
 
+# The old Netlify address sends everyone (and Google) to the real domain
+[[redirects]]
+  from = "https://iihec.netlify.app/*"
+  to = "https://iihec.org/:splat"
+  status = 301
+  force = true
+
 # Khmer pages that do not exist show the Khmer "page not found"
 [[redirects]]
   from = "/km/*"

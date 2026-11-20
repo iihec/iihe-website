@@ -225,6 +225,10 @@ function translatePage(file) {
   $('input[name="booked_from_page"]').attr("value", "/km" + page);
   $('script[data-en-only]').remove();
   $('meta[property="og:locale"]').attr("content", "km_KH");
+  $('link[rel="canonical"], meta[property="og:url"]').each((_, el) => {
+    const a = el.name === "link" ? "href" : "content";
+    el.attribs[a] = el.attribs[a].replace(SITE_URL, SITE_URL + "/km");
+  });
 
   const out = path.join(OUT, path.relative(SITE, file));
   fs.mkdirSync(path.dirname(out), { recursive: true });

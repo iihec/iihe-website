@@ -135,6 +135,10 @@ button { font: inherit; cursor: pointer; }
 a.lang { color: #A8ADB2; text-decoration: none; }
 a.lang:hover, a.lang:focus-visible { color: #fff; }
 .lang-sep { color: #5A5C60; }
+/* Larger tap area on phones without changing the look */
+a.lang, .utility-contacts a { position: relative; }
+a.lang::after { content: ""; position: absolute; inset: -12px -10px; }
+.utility-contacts a::after { content: ""; position: absolute; inset: -10px -4px; }
 
 .site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 40; background: rgba(255, 255, 255, 0.86); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); border-bottom: 1px solid var(--grey); }
 .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 76px; }
@@ -601,3 +605,4 @@ html:lang(km) .h2 { font-size: clamp(26px, 3.2vw, 32px); }
 html:lang(km) .tagline-text { font-size: clamp(26px, 3.8vw, 40px); }
 html:lang(km) :is(.eyebrow, .kicker, .stage-label, .qp-stage, .fee-table thead th, .intake-card dt, .post-meta, .back-link, .field label, .field legend, .footer-heading, .partner-logo-label, .subnav-note) { font-size: 14px; }
 html:lang(km) :is(p, li, dd, td, h1, h2, h3, h4) { overflow-wrap: anywhere; }
+html:lang(km) :is(.utility-bar, .form-note, .footer-legal, .footer-bottom) { font-size: 14px; }
