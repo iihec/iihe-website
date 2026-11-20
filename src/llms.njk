@@ -1,0 +1,50 @@
+---
+permalink: /llms.txt
+eleventyExcludeFromCollections: true
+---
+# {{ site.fullName }} (IIHE Cambodia)
+
+> IIHE Cambodia is an NCC Education Accredited Partner Centre in Phnom Penh, operated by IIHE Co., Ltd. Students study Level 3, Level 4 and Level 5 qualifications, awarded by NCC Education, face to face on the Phnom Penh campus, then progress to a one-year UK Bachelor's top-up degree, validated and awarded by the University of Greater Manchester and delivered online by Western International College Online (WINC). IIHE Cambodia is accredited by NCC Education, not by the university.
+
+Website languages: English ({{ site.url }}/) and Khmer ({{ site.url }}/km/).
+
+## Programmes
+{% for p in programmes %}
+- [{{ p.name }}]({{ site.url }}{{ p.url }}): {{ p.summary }} Final award: {{ p.award }} (top-up), validated and awarded by the University of Greater Manchester and delivered online by Western International College Online (WINC).
+{%- endfor %}
+
+## Fees (US$, paid one stage at a time)
+{% for r in fees.rows %}
+- {{ r.stage }}: {{ r.amount | usd }}
+{%- endfor %}
+- Total: {{ fees.rows | sumFees | usd }}
+
+{{ fees.note }}{% if fees.scholarship %} {{ fees.scholarship }}{% endif %}
+Details: {{ site.url }}/fees-and-admissions/
+
+## Frequently asked questions
+{% for f in faqs %}
+### {{ f.q }}
+{{ f.a }}
+{% endfor %}
+## How to apply
+
+Book a free consultation: {{ site.url }}/book-a-consultation/
+{%- if site.contact.phone %}
+Phone: {{ site.contact.phone }}{% endif %}
+{%- if site.contact.email %}
+Email: {{ site.contact.email }}{% endif %}
+{%- if site.contact.telegram %}
+Telegram: {{ site.contact.telegram }}{% endif %}
+{%- if site.contact.address %}
+Address: {{ site.contact.address }}{% endif %}
+
+## More pages
+
+- [About IIHE Cambodia]({{ site.url }}/about/)
+- [Fees and admissions]({{ site.url }}/fees-and-admissions/)
+- [News and guides]({{ site.url }}/news/)
+{%- for post in collections.posts %}
+- [{{ post.data.title }}]({{ site.url }}{{ post.url }}): {{ post.data.summary }}
+{%- endfor %}
+- [Privacy policy]({{ site.url }}/privacy/)

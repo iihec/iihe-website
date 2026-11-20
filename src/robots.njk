@@ -1,0 +1,31 @@
+---
+permalink: /robots.txt
+eleventyExcludeFromCollections: true
+---
+# Search engines and AI assistants are welcome to read this site.
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /thank-you/
+Disallow: /km/thank-you/
+
+User-agent: GPTBot
+Allow: /
+Disallow: /admin/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /admin/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /admin/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /admin/
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: {{ site.url }}/sitemap.xml

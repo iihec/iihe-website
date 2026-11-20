@@ -1,0 +1,20 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{%- for item in collections.all %}
+{%- if item.url and item.url.endsWith("/") and item.url != "/thank-you/" and not item.data.noindex %}
+{%- for lang in ["", "/km"] %}
+  <url>
+    <loc>{{ site.url }}{{ lang }}{{ item.url }}</loc>
+    <lastmod>{{ item.date | isoDate }}</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}{{ item.url }}"/>
+    <xhtml:link rel="alternate" hreflang="km" href="{{ site.url }}/km{{ item.url }}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ item.url }}"/>
+  </url>
+{%- endfor %}
+{%- endif %}
+{%- endfor %}
+</urlset>

@@ -1,0 +1,85 @@
+{#- Structured data (schema.org JSON-LD) that Google, Bing and AI assistants read.
+    Blocks marked data-en-only are removed from the Khmer pages, because their text is English. -#}
+{%- set c = site.contact -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "@id": "{{ site.url }}/#organization",
+  "name": {{ site.fullName | dump | safe }},
+  "alternateName": ["IIHE Cambodia", "IIHEC"],
+  "legalName": "IIHE Co., Ltd.",
+  "url": "{{ site.url }}/",
+  "logo": "{{ site.url }}/assets/img/mark.png",
+  "image": "{{ site.url }}/assets/img/og-image.jpg",
+  "description": {{ site.description | dump | safe }},
+  {%- if c.address %}
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "GS-03, Sihanouk Blvd (St. 274), Phoum 07",
+    "addressLocality": "Phnom Penh",
+    "postalCode": "12250",
+    "addressCountry": "KH"
+  },{% endif %}
+  {%- if c.phone %}
+  "telephone": {{ c.phone | dump | safe }},{% endif %}
+  {%- if c.email %}
+  "email": {{ c.email | dump | safe }},{% endif %}
+  "memberOf": {
+    "@type": "Organization",
+    "name": "NCC Education",
+    "url": "https://www.nccedu.com/"
+  },
+  "sameAs": [{% set first = true %}{% for s in [c.facebook, c.youtube, c.telegram] %}{% if s %}{% if not first %}, {% endif %}{{ s | dump | safe }}{% set first = false %}{% endif %}{% endfor %}]
+}
+</script>
+{%- if page.url == "/" %}
+<script type="application/ld+json" data-en-only>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{% for f in faqs %}
+    {
+      "@type": "Question",
+      "name": {{ f.q | dump | safe }},
+      "acceptedAnswer": { "@type": "Answer", "text": {{ f.a | dump | safe }} }
+    }{% if not loop.last %},{% endif %}{% endfor %}
+  ]
+}
+</script>
+{%- endif %}
+{%- if programmeKey %}{% set p = programmes | findBy("key", programmeKey) %}
+<script type="application/ld+json" data-en-only>
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": {{ (p.name + " pathway to the " + p.award + " top-up") | dump | safe }},
+  "description": {{ (description or p.summary) | dump | safe }},
+  "url": "{{ site.url }}{{ page.url }}",
+  "inLanguage": "en",
+  "provider": { "@id": "{{ site.url }}/#organization" },
+  "educationalCredentialAwarded": {{ p.award | dump | safe }},
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "Blended",
+    "location": {{ (c.city or "Phnom Penh, Cambodia") | dump | safe }}
+  }
+}
+</script>
+{%- endif %}
+{%- if "/news/" in page.url and page.url != "/news/" %}
+<script type="application/ld+json" data-en-only>
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ title | dump | safe }},
+  "description": {{ (summary or description or site.description) | dump | safe }},
+  "datePublished": "{{ page.date | isoDate }}",
+  "url": "{{ site.url }}{{ page.url }}",
+  "inLanguage": "en",
+  "image": "{{ site.url }}/assets/img/og-image.jpg",
+  "author": { "@id": "{{ site.url }}/#organization" },
+  "publisher": { "@id": "{{ site.url }}/#organization" }
+}
+</script>
+{%- endif %}

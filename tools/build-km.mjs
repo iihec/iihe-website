@@ -222,6 +222,8 @@ function translatePage(file) {
   sw.find(".lang-en").replaceWith(`<a class="lang lang-en" href="${enPage}" hreflang="en" lang="en">EN</a>`);
   sw.find(".lang-km").replaceWith(`<span class="lang lang-km is-current" aria-current="true">KH</span>`);
   $('input[name="site_language"]').attr("value", "Khmer");
+  $('input[name="booked_from_page"]').attr("value", "/km" + page);
+  $('script[data-en-only]').remove();
   $('meta[property="og:locale"]').attr("content", "km_KH");
 
   const out = path.join(OUT, path.relative(SITE, file));
