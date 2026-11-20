@@ -188,7 +188,7 @@ def main(out):
         "3. Grey rows are section titles. They tell you where the text appears on the website; they do not need translating.",
         "4. Each text appears only once, even if it is used on several pages (for example buttons and the footer).",
         "5. Column D explains special texts: buttons, headings, form messages, and texts only Google or screen readers see.",
-        "6. Keep these names in English (they are official names): IIHE, NCC Education, University of Greater Manchester, "
+        "6. Keep these names in English (they are official names): International Institute of Higher Education (IIHE) Cambodia, IIHE Cambodia, IIHE, NCC Education, University of Greater Manchester, "
         "Western International College Online (WINC), IT Academy STEP, MoEYS, IELTS, BAC II, A Levels, IB.",
         "7. Keep amounts, numbers, emails and links as they are.",
         "8. If a sentence has no good Khmer equivalent, write your suggestion and add a comment in column E.",
